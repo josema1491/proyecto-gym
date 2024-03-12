@@ -1,17 +1,3 @@
-# Copyright (c) Streamlit Inc. (2018-2022) Snowflake Inc. (2022)
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 import streamlit as st
 
 def calculate_price(plan, months):
@@ -24,12 +10,7 @@ def calculate_price(plan, months):
     else:
         return 0
 
-def main():
-    st.set_page_config(
-        page_title="Plan de Entrenamiento",
-        page_icon="💪",
-    )
-
+def plan_entrenamiento():
     st.title("¡Elige tu Plan de Entrenamiento!")
     st.write("Bienvenido a nuestra plataforma de entrenamiento. ¡Selecciona el plan que mejor se adapte a ti y comienza a mejorar tu salud y bienestar!")
 
@@ -47,6 +28,23 @@ def main():
     else:
         st.warning("Por favor, selecciona un plan válido.")
 
+def main():
+    st.set_page_config(
+        page_title="Ejemplos Streamlit",
+        page_icon="🔥",
+    )
+
+    st.sidebar.title("Ejemplos Streamlit")
+    app_selector = st.sidebar.radio("Selecciona una demo", ("Plan de Entrenamiento", "Demo de Animación", "Demo de Plotting", "Demo de Mapeo"))
+
+    if app_selector == "Plan de Entrenamiento":
+        plan_entrenamiento()
+    elif app_selector == "Demo de Animación":
+        animation_demo()
+    elif app_selector == "Demo de Plotting":
+        plotting_demo()
+    elif app_selector == "Demo de Mapeo":
+        mapping_demo()
+
 if __name__ == "__main__":
-    st.sidebar.markdown("[Plan de Entrenamiento](/)")
     main()
