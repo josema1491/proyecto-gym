@@ -13,9 +13,6 @@
 # limitations under the License.
 
 import streamlit as st
-from streamlit.logger import get_logger
-
-LOGGER = get_logger(__name__)
 
 def calculate_price(plan, months):
     if plan == "Mensual":
@@ -27,12 +24,12 @@ def calculate_price(plan, months):
     else:
         return 0
 
-def run():
+def main():
     st.set_page_config(
         page_title="Plan de Entrenamiento",
         page_icon="💪",
     )
-    st.sidebar.markdown("[Plan de Entrenamiento](/)")
+
     st.title("¡Elige tu Plan de Entrenamiento!")
     st.write("Bienvenido a nuestra plataforma de entrenamiento. ¡Selecciona el plan que mejor se adapte a ti y comienza a mejorar tu salud y bienestar!")
 
@@ -50,6 +47,6 @@ def run():
     else:
         st.warning("Por favor, selecciona un plan válido.")
 
-
 if __name__ == "__main__":
-    run()
+    st.sidebar.markdown("[Plan de Entrenamiento](/)")
+    main()
