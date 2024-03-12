@@ -32,7 +32,7 @@ def run():
         page_title="Plan de Entrenamiento",
         page_icon="💪",
     )
-
+    st.sidebar.markdown("[Plan de Entrenamiento](/)")
     st.title("¡Elige tu Plan de Entrenamiento!")
     st.write("Bienvenido a nuestra plataforma de entrenamiento. ¡Selecciona el plan que mejor se adapte a ti y comienza a mejorar tu salud y bienestar!")
 
