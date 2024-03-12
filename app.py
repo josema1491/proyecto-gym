@@ -28,23 +28,5 @@ def plan_entrenamiento():
     else:
         st.warning("Por favor, selecciona un plan válido.")
 
-def main():
-    st.set_page_config(
-        page_title="Ejemplos Streamlit",
-        page_icon="🔥",
-    )
-
-    st.sidebar.title("Ejemplos Streamlit")
-    app_selector = st.sidebar.radio("Selecciona una demo", ("Plan de Entrenamiento", "Demo de Animación", "Demo de Plotting", "Demo de Mapeo"))
-
-    if app_selector == "Plan de Entrenamiento":
-        plan_entrenamiento()
-    elif app_selector == "Demo de Animación":
-        animation_demo()
-    elif app_selector == "Demo de Plotting":
-        plotting_demo()
-    elif app_selector == "Demo de Mapeo":
-        mapping_demo()
-
 if __name__ == "__main__":
     main()
